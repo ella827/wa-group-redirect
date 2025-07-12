@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to WhatsApp Group...</title>
+  <script>
+    const links = [
+      "https://chat.whatsapp.com/CrToCriQmZAIHgFgUnz8wT",
+      "https://chat.whatsapp.com/E9xlt6qrqke1f7f7X9dLVw",
+      "https://chat.whatsapp.com/BTuUCJcfsY4HjjiL9MC6Fp"
+    ];
+    const index = localStorage.getItem("wa_index") || 0;
+    const nextIndex = (parseInt(index) + 1) % links.length;
+    localStorage.setItem("wa_index", nextIndex);
+
+    setTimeout(() => {
+      window.location.href = links[index];
+    }, 1500);
+  </script>
+</head>
+<body>
+  <p>Dear, hold on — you’ll be chatting with us shortly.</p>
+</body>
+</html>
